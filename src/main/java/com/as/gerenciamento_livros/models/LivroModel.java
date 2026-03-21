@@ -1,10 +1,6 @@
 package com.as.gerenciamento_livros.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "TBL_LIVRO")
@@ -14,7 +10,9 @@ public class LivroModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
+    @Column(name = "nome_autor")
     private String autor;
+    @Column(name = "ano_publicacao")
     private Integer anoPublicacao;
 
     public LivroModel() {}
